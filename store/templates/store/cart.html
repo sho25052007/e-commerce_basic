@@ -37,10 +37,10 @@
                     <div class="cart-element-2">{{item.product.name}}</div>
                     <div class="cart-element-1">£{{item.product.price|floatformat:2}}</div>
                     <div class="cart-element-1">
-                        <p class="quantity">x{{item.quantity}}</p>
+                        <p class="quantity">{{item.quantity}}</p>
                         <div class="quantity">
-                            <img class="change-quantity" src="{% static 'images/arrow-up.png' %}">
-                            <img class="change-quantity" src="{% static 'images/arrow-down.png' %}">
+                            <img data-product="{{item.product.id}}" data-action="add" class="change-quantity update-cart" src="{% static 'images/arrow-up.png' %}">
+                            <img data-product="{{item.product.id}}" data-action="remove" class="change-quantity update-cart" src="{% static 'images/arrow-down.png' %}">
                         </div>
                     </div>
                     <div class="cart-element-1">£{{item.get_total|floatformat:2}}</div>
